@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 
 class Details extends StatefulWidget {
   const Details({Key? key}) : super(key: key);
@@ -49,29 +50,34 @@ class _DetailsState extends State<Details> {
                     style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.symmetric(vertical: 30,horizontal: 15),
-                  width: MediaQuery.of(context).size.width ,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: Color.fromRGBO(0, 153, 0, 1),
-                    borderRadius: BorderRadius.circular(7),
-                    boxShadow: const [
-                  BoxShadow(
-                  color: Color.fromRGBO(0, 0, 0, 0.25),
-                  spreadRadius: 0,
-                  blurRadius: 5,
-                  offset: Offset(0, 2), // changes position of shadow
-                ),
-              ],
+                InkWell(
+                  onTap: (){
+FlutterPhoneDirectCaller.callNumber("123456");
+                  },
+                  child: Container(
+                    margin: EdgeInsets.symmetric(vertical: 30,horizontal: 15),
+                    width: MediaQuery.of(context).size.width ,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Color.fromRGBO(0, 153, 0, 1),
+                      borderRadius: BorderRadius.circular(7),
+                      boxShadow: const [
+                    BoxShadow(
+                    color: Color.fromRGBO(0, 0, 0, 0.25),
+                    spreadRadius: 0,
+                    blurRadius: 5,
+                    offset: Offset(0, 2), // changes position of shadow
                   ),
-                  child: const Center(
-                    child: Text(
-                      "Jaň et",
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                          color: Color.fromRGBO(250, 250, 250, 1)),
+              ],
+                    ),
+                    child: const Center(
+                      child: Text(
+                        "Jaň et",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                            color: Color.fromRGBO(250, 250, 250, 1)),
+                      ),
                     ),
                   ),
                 )
